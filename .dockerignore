@@ -1,0 +1,12 @@
+.git
+.env
+outputs
+uploads
+__pycache__
+*.pyc
+node_modules
+.DS_Store
+.vercelignore
+vercel.json
+migrations
+*.md
