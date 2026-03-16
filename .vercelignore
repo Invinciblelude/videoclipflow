@@ -1,0 +1,9 @@
+server.py
+requirements.txt
+.env
+.env.example
+outputs/
+uploads/
+__pycache__/
+*.pyc
+migrations/

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VideoClipFlow — Turn Any Link Into Transcripts, Captions, Audio & Clips</title>
+  <meta name="description" content="Paste a link. Get transcripts, captions, audio, or video — instantly. The easiest media toolkit for creators, podcasters, and small businesses.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="logo">Video<span class="logo-accent">ClipFlow</span></a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#how">How It Works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="app.html" class="btn-nav">Launch App</a>
+      </div>
+      <button class="mobile-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    </div>
+  </nav>
+
+  <!-- HERO with visual background -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-visual">
+      <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=1400&q=80" alt="Creator at desk with multiple screens" class="hero-img">
+      <div class="hero-img-overlay"></div>
+    </div>
+    <div class="container hero-content">
+      <div class="hero-badge">No downloads &middot; No installs &middot; Works in your browser</div>
+      <h1>Paste a link.<br>Get everything you need.</h1>
+      <p class="hero-sub">Transcripts, captions, audio, video, clips — extracted from any URL in seconds.</p>
+      <div class="hero-demo">
+        <div class="demo-input-wrap">
+          <input type="text" class="demo-input" id="heroUrl" placeholder="Paste any YouTube, podcast, or video URL...">
+          <button class="demo-btn" id="heroBtn">Extract</button>
+          <script>
+            document.getElementById('heroBtn').addEventListener('click', function() {
+              var url = document.getElementById('heroUrl').value.trim();
+              if (url) {
+                window.location.href = 'app.html?url=' + encodeURIComponent(url);
+              } else {
+                window.location.href = 'app.html';
+              }
+            });
+            document.getElementById('heroUrl').addEventListener('keydown', function(e) {
+              if (e.key === 'Enter') document.getElementById('heroBtn').click();
+            });
+          </script>
+        </div>
+        <p class="demo-hint">First extraction is free — just sign in to get started</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF strip with platform logos -->
+  <section class="logos-strip">
+    <div class="container">
+      <p class="logos-label">Extract content from 1,000+ platforms</p>
+      <div class="logos-row">
+        <div class="platform-logo">
+          <img src="https://img.icons8.com/color/48/youtube-play.png" alt="YouTube">
+          <span>YouTube</span>
+        </div>
+        <div class="platform-logo">
+          <img src="https://img.icons8.com/color/48/tiktok.png" alt="TikTok">
+          <span>TikTok</span>
+        </div>
+        <div class="platform-logo">
+          <img src="https://img.icons8.com/color/48/instagram-new.png" alt="Instagram">
+          <span>Instagram</span>
+        </div>
+        <div class="platform-logo">
+          <img src="https://img.icons8.com/color/48/twitter--v1.png" alt="Twitter/X">
+          <span>Twitter/X</span>
+        </div>
+        <div class="platform-logo">
+          <img src="https://img.icons8.com/color/48/vimeo.png" alt="Vimeo">
+          <span>Vimeo</span>
+        </div>
+        <div class="platform-logo">
+          <img src="https://img.icons8.com/color/48/soundcloud.png" alt="SoundCloud">
+          <span>SoundCloud</span>
+        </div>
+        <div class="platform-logo">
+          <img src="https://img.icons8.com/color/48/spotify.png" alt="Podcasts">
+          <span>Podcasts</span>
+        </div>
+        <div class="platform-logo plus-more">
+          <span class="more-num">1000+</span>
+          <span>more sites</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISUAL SHOWCASE: Before/After -->
+  <section class="showcase">
+    <div class="container">
+      <div class="showcase-grid">
+        <div class="showcase-text">
+          <p class="section-label">The problem</p>
+          <h2>Your content is trapped on platforms.</h2>
+          <p>You made a great podcast episode. A killer YouTube video. A viral TikTok. But when you need the transcript, the audio file, or clips for other platforms — you're stuck. Copying and pasting. Screen recording. Paying $50+ for a transcription service.</p>
+          <p><strong>VideoClipFlow fixes that in one click.</strong></p>
+        </div>
+        <div class="showcase-visual">
+          <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=600&q=80" alt="Frustrated creator at computer" class="showcase-img" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES with images -->
+  <section id="features" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Everything in one place</p>
+        <h2>Six tools. One dashboard.</h2>
+      </div>
+      <div class="features-visual-grid">
+
+        <div class="feature-visual-card">
+          <div class="fv-img-wrap">
+            <img src="https://images.unsplash.com/photo-1589903308904-1010c2294adc?w=500&q=80" alt="Person reading transcript on tablet" loading="lazy">
+          </div>
+          <div class="fv-content">
+            <div class="fv-icon">&#128196;</div>
+            <h3>Transcription</h3>
+            <p>AI-powered speech-to-text. Get clean, timestamped transcripts from any audio or video in 90+ languages. Perfect for show notes, blog posts, and SEO.</p>
+          </div>
+        </div>
+
+        <div class="feature-visual-card">
+          <div class="fv-img-wrap">
+            <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=500&q=80" alt="Video with captions on screen" loading="lazy">
+          </div>
+          <div class="fv-content">
+            <div class="fv-icon">&#127916;</div>
+            <h3>Captions & Subtitles</h3>
+            <p>Generate perfectly timed SRT/VTT files. Upload to YouTube, burn into your Reels, or add to any video editor. Word-level accuracy.</p>
+          </div>
+        </div>
+
+        <div class="feature-visual-card">
+          <div class="fv-img-wrap">
+            <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=500&q=80" alt="Audio waveform on screen with headphones" loading="lazy">
+          </div>
+          <div class="fv-content">
+            <div class="fv-icon">&#127925;</div>
+            <h3>Audio Extraction</h3>
+            <p>Pull clean MP3, WAV, or FLAC audio from any video. Turn video interviews into podcast episodes. Grab music you created on any platform.</p>
+          </div>
+        </div>
+
+        <div class="feature-visual-card">
+          <div class="fv-img-wrap">
+            <img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?w=500&q=80" alt="Video editing timeline on screen" loading="lazy">
+          </div>
+          <div class="fv-content">
+            <div class="fv-icon">&#127909;</div>
+            <h3>Video Download</h3>
+            <p>Download your own content in up to 4K quality. Back up your videos, repurpose across platforms, or archive your work. MP4 or WebM.</p>
+          </div>
+        </div>
+
+        <div class="feature-visual-card">
+          <div class="fv-img-wrap">
+            <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=500&q=80" alt="Person scrolling short-form video on phone" loading="lazy">
+          </div>
+          <div class="fv-content">
+            <div class="fv-icon">&#9986;</div>
+            <h3>Smart Clips</h3>
+            <p>AI finds the best moments in your long videos and cuts them into vertical clips — captioned, branded, and sized for TikTok, Reels, and Shorts.</p>
+          </div>
+        </div>
+
+        <div class="feature-visual-card">
+          <div class="fv-img-wrap">
+            <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=500&q=80" alt="Document scanning on mobile device" loading="lazy">
+          </div>
+          <div class="fv-content">
+            <div class="fv-icon">&#128221;</div>
+            <h3>OCR / Text Extraction</h3>
+            <p>Extract text from images, PDFs, screenshots, and slides. Turn a photo of a whiteboard into editable text. Multi-language support.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS with visual steps -->
+  <section id="how" class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Three steps</p>
+        <h2>It's stupidly simple.</h2>
+      </div>
+      <div class="steps-visual">
+        <div class="step-visual">
+          <div class="step-img-wrap">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&q=80" alt="Person pasting a URL into browser" loading="lazy">
+            <div class="step-num-overlay">1</div>
+          </div>
+          <h3>Paste or upload</h3>
+          <p>Drop in any URL — YouTube, TikTok, podcast, whatever. Or drag and drop your own file.</p>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step-visual">
+          <div class="step-img-wrap">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&q=80" alt="Dashboard with checkboxes and options" loading="lazy">
+            <div class="step-num-overlay">2</div>
+          </div>
+          <h3>Pick your outputs</h3>
+          <p>Transcript, captions, audio, video, clips — check the boxes for what you need.</p>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step-visual">
+          <div class="step-img-wrap">
+            <img src="https://images.unsplash.com/photo-1517292987719-0369a794ec0f?w=500&q=80" alt="Person downloading files on laptop" loading="lazy">
+            <div class="step-num-overlay">3</div>
+          </div>
+          <h3>Download & use</h3>
+          <p>Get your files in seconds. Clean, formatted, ready to publish. First one's free.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR - with photos -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Built for people who create</p>
+        <h2>See yourself?</h2>
+      </div>
+      <div class="persona-grid">
+        <div class="persona-card">
+          <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=400&q=80" alt="Podcaster recording in studio" loading="lazy">
+          <div class="persona-content">
+            <h3>Podcasters</h3>
+            <p>Turn every episode into a transcript, show notes, and 10 captioned clips for social media. One upload does it all.</p>
+          </div>
+        </div>
+        <div class="persona-card">
+          <img src="https://images.unsplash.com/photo-1616587226960-4a03badbe8bf?w=400&q=80" alt="YouTuber filming content" loading="lazy">
+          <div class="persona-content">
+            <h3>YouTubers</h3>
+            <p>Generate captions, pull audio for podcast feeds, and create Shorts from long-form videos — automatically.</p>
+          </div>
+        </div>
+        <div class="persona-card">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&q=80" alt="Marketing team working together" loading="lazy">
+          <div class="persona-content">
+            <h3>Agencies & Marketers</h3>
+            <p>Repurpose client content across every platform in minutes. Scale production without hiring editors.</p>
+          </div>
+        </div>
+        <div class="persona-card">
+          <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&q=80" alt="Small business owner at counter" loading="lazy">
+          <div class="persona-content">
+            <h3>Small Businesses</h3>
+            <p>Make your videos accessible with captions. Extract audio for ads. Back up your entire content library.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Simple pricing</p>
+        <h2>Try it for $5. Keep it for $9/mo.</h2>
+        <p class="section-desc">Your first extraction is free. After that, pick a plan and keep going.</p>
+      </div>
+      <div class="pricing-duo">
+
+        <div class="price-card">
+          <div class="price-badge-trial">Start Here</div>
+          <div class="price-tier">2-Week Trial</div>
+          <div class="price-amount">$5</div>
+          <p class="price-desc">Full access for 14 days. Every feature. No limits.</p>
+          <ul class="price-features">
+            <li><span class="check">&#10003;</span> Unlimited extractions</li>
+            <li><span class="check">&#10003;</span> Transcription (any length)</li>
+            <li><span class="check">&#10003;</span> Captions / SRT / VTT</li>
+            <li><span class="check">&#10003;</span> Audio extraction (MP3, WAV, FLAC)</li>
+            <li><span class="check">&#10003;</span> Video download (up to 4K)</li>
+            <li><span class="check">&#10003;</span> Smart Clips</li>
+            <li><span class="check">&#10003;</span> OCR / Text extraction</li>
+            <li><span class="check">&#10003;</span> 90+ languages</li>
+            <li><span class="check">&#10003;</span> No watermarks</li>
+          </ul>
+          <a href="pay.html?plan=trial" class="btn btn-outline btn-block btn-lg">Start 2-Week Trial — $5</a>
+          <p class="price-note">One-time payment &middot; No auto-renew</p>
+        </div>
+
+        <div class="price-card price-card-popular">
+          <div class="popular-badge">Best Value</div>
+          <div class="price-tier">Monthly</div>
+          <div class="price-amount">$9<span>/mo</span></div>
+          <p class="price-desc">Unlimited access, every feature, cancel anytime.</p>
+          <ul class="price-features">
+            <li><span class="check">&#10003;</span> <strong>Everything in the trial, plus:</strong></li>
+            <li><span class="check">&#10003;</span> Unlimited extractions</li>
+            <li><span class="check">&#10003;</span> Priority processing</li>
+            <li><span class="check">&#10003;</span> Longer file support (up to 4 hrs)</li>
+            <li><span class="check">&#10003;</span> All export formats</li>
+            <li><span class="check">&#10003;</span> Batch processing</li>
+            <li><span class="check">&#10003;</span> Download history (30 days)</li>
+            <li><span class="check">&#10003;</span> Email support</li>
+            <li><span class="check">&#10003;</span> New features first</li>
+          </ul>
+          <a href="pay.html?plan=monthly" class="btn btn-primary btn-block btn-lg">Subscribe — $9/mo</a>
+          <p class="price-note">Cancel anytime &middot; Pay with USDT</p>
+        </div>
+
+      </div>
+
+      <div class="pricing-compare">
+        <h3>How VideoClipFlow compares</h3>
+        <div class="compare-table">
+          <div class="compare-row compare-header">
+            <span>Service</span>
+            <span>Price</span>
+            <span>What you get</span>
+          </div>
+          <div class="compare-row">
+            <span>Opus Clip</span>
+            <span>$15-29/mo</span>
+            <span>Clips + captions only</span>
+          </div>
+          <div class="compare-row">
+            <span>Otter.ai</span>
+            <span>$17/mo</span>
+            <span>Transcription only</span>
+          </div>
+          <div class="compare-row">
+            <span>Rev</span>
+            <span>$0.25/min</span>
+            <span>Transcription only</span>
+          </div>
+          <div class="compare-row">
+            <span>Repurpose.io</span>
+            <span>$35/mo</span>
+            <span>Repurposing only</span>
+          </div>
+          <div class="compare-row compare-highlight">
+            <span><strong>VideoClipFlow</strong></span>
+            <span><strong>$9/mo</strong></span>
+            <span><strong>All of the above + downloads</strong></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL / SOCIAL PROOF VISUAL -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="proof-grid">
+        <div class="proof-stat">
+          <div class="proof-num">1,000+</div>
+          <div class="proof-label">Supported platforms</div>
+        </div>
+        <div class="proof-stat">
+          <div class="proof-num">90+</div>
+          <div class="proof-label">Languages supported</div>
+        </div>
+        <div class="proof-stat">
+          <div class="proof-num">95%+</div>
+          <div class="proof-label">Transcription accuracy</div>
+        </div>
+        <div class="proof-stat">
+          <div class="proof-num">10 sec</div>
+          <div class="proof-label">Average processing time</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Questions</p>
+        <h2>FAQ</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Is this legal?</summary>
+          <p>Yes. VideoClipFlow is designed for users to process their own content or content they have permission to use. Downloading your own videos, transcribing your own podcasts, and extracting audio from content you own is completely legal. Our Terms of Service require users to only process content they have rights to.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What sites are supported?</summary>
+          <p>Over 1,000 websites including YouTube, TikTok, Instagram, Twitter/X, Vimeo, SoundCloud, Twitch, Facebook, and many more.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How accurate is the transcription?</summary>
+          <p>We use state-of-the-art AI speech recognition (OpenAI Whisper) supporting 90+ languages. Accuracy is typically 95%+ for clear speech.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I cancel anytime?</summary>
+          <p>Absolutely. No contracts, no cancellation fees. Cancel from your dashboard anytime.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What file formats do you support?</summary>
+          <p>Transcripts: TXT, DOCX, PDF. Captions: SRT, VTT, ASS. Audio: MP3, WAV, FLAC. Video: MP4, WebM. Clips: MP4 (9:16 vertical).</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do you store my files?</summary>
+          <p>Files are available for 24 hours then automatically deleted. We never share, sell, or use your content.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA with visual -->
+  <section class="cta-section">
+    <div class="cta-bg">
+      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1400&q=80" alt="Team collaborating on content" loading="lazy">
+      <div class="cta-bg-overlay"></div>
+    </div>
+    <div class="container cta-content">
+      <h2>Stop wasting hours on manual extraction.</h2>
+      <p>Join creators who save 10+ hours every week with VideoClipFlow.</p>
+      <a href="app.html" class="btn btn-primary btn-lg">Try It Free — First Extraction On Us</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">Video<span class="logo-accent">ClipFlow</span></a>
+          <p>The easiest way to turn any link into transcripts, captions, audio, and clips.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#features">Features</a>
+          <a href="#pricing">Pricing</a>
+          <a href="app.html">Launch App</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="terms.html">Terms of Service</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="acceptable-use.html">Acceptable Use</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="#faq">FAQ</a>
+          <a href="mailto:support@videoclipflow.com">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 VideoClipFlow. Built by Vince Dang.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VideoClipFlow — App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body class="app-body">
+
+  <nav class="app-nav">
+    <div class="app-nav-inner">
+      <a href="index.html" class="logo">Video<span class="logo-accent">ClipFlow</span></a>
+      <div class="app-nav-right">
+        <span class="usage-badge" id="usageBadge">Full Access</span>
+        <a href="#" class="btn-nav" id="authBtn">Sign In</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="app-main">
+    <div class="app-container">
+
+      <div class="app-input-section">
+        <h1>What do you want to extract?</h1>
+        <p class="app-subtitle">Paste a URL or upload a file to get started.</p>
+
+        <div class="input-tabs">
+          <button class="input-tab active" data-tab="url">Paste URL</button>
+          <button class="input-tab" data-tab="upload">Upload File</button>
+        </div>
+
+        <div class="tab-content" id="urlTab">
+          <div class="url-input-wrap">
+            <input type="text" class="url-input" id="urlInput" placeholder="https://youtube.com/watch?v=... or any supported URL">
+          </div>
+        </div>
+
+        <div class="tab-content hidden" id="uploadTab">
+          <div class="upload-zone" id="uploadZone">
+            <div class="upload-icon">&#128193;</div>
+            <p>Drag & drop your file here, or <label for="fileInput" class="upload-link">browse</label></p>
+            <p class="upload-hint">Supports MP3, MP4, WAV, MOV, PDF, PNG, JPG — up to 500MB</p>
+            <input type="file" id="fileInput" accept="audio/*,video/*,image/*,.pdf" hidden>
+          </div>
+          <div class="file-selected hidden" id="fileSelected">
+            <span class="file-name" id="fileName"></span>
+            <button class="file-remove" id="fileRemove">&times;</button>
+          </div>
+        </div>
+
+        <div class="output-options">
+          <p class="options-label">Select outputs:</p>
+          <div class="options-grid">
+            <label class="option-check">
+              <input type="checkbox" id="optTranscript" checked>
+              <span class="option-box">
+                <span class="option-icon">&#128196;</span>
+                <span class="option-name">Transcript</span>
+                <span class="option-desc">Clean text, timestamped</span>
+              </span>
+            </label>
+            <label class="option-check">
+              <input type="checkbox" id="optCaptions" checked>
+              <span class="option-box">
+                <span class="option-icon">&#127916;</span>
+                <span class="option-name">Captions / SRT</span>
+                <span class="option-desc">Timed subtitles</span>
+              </span>
+            </label>
+            <label class="option-check">
+              <input type="checkbox" id="optAudio">
+              <span class="option-box">
+                <span class="option-icon">&#127925;</span>
+                <span class="option-name">Audio (MP3)</span>
+                <span class="option-desc">Extract audio track</span>
+              </span>
+            </label>
+            <label class="option-check">
+              <input type="checkbox" id="optVideo">
+              <span class="option-box">
+                <span class="option-icon">&#127909;</span>
+                <span class="option-name">Video (MP4)</span>
+                <span class="option-desc">Download video file</span>
+              </span>
+            </label>
+            <label class="option-check">
+              <input type="checkbox" id="optClips">
+              <span class="option-box">
+                <span class="option-icon">&#9986;</span>
+                <span class="option-name">Smart Clips</span>
+                <span class="option-desc pro-tag">PRO</span>
+              </span>
+            </label>
+            <label class="option-check">
+              <input type="checkbox" id="optOcr">
+              <span class="option-box">
+                <span class="option-icon">&#128221;</span>
+                <span class="option-name">OCR / Text</span>
+                <span class="option-desc">From images & PDFs</span>
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <button class="btn btn-primary btn-lg btn-block extract-btn" id="extractBtn">
+          Extract Now
+        </button>
+      </div>
+
+      <div class="app-results-section hidden" id="resultsSection">
+        <div class="results-header">
+          <h2>Your outputs are ready</h2>
+          <button class="btn btn-outline" id="newExtract">+ New Extraction</button>
+        </div>
+        <div class="results-meta" id="resultsMeta"></div>
+        <div class="results-grid" id="resultsGrid"></div>
+      </div>
+
+      <div class="app-processing hidden" id="processingSection">
+        <div class="processing-spinner"></div>
+        <h2>Processing your content...</h2>
+        <p class="processing-step" id="processingStep">Analyzing URL...</p>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="auth.js"></script>
+  <script src="email-guard.js"></script>
+  <script src="auth-modal.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
