@@ -1,5 +1,5 @@
 {
-  "buildCommand": null,
+  "buildCommand": "echo 'Static site - no build'",
   "outputDirectory": ".",
   "rewrites": [
     { "source": "/(.*)", "destination": "/$1" }
